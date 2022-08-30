@@ -1,0 +1,37 @@
+//   "start": "run-p start:dev start:api",
+
+
+npm run build
+npm start
+
+//"start": "run-p start:dev start:api",
+
+<SelectInput
+                name="playerSelect"
+                label="Player"
+                value={player.playerSelect || ""}
+                defaultOption="Select Player"
+                options={players.map(play => ({
+                  value: play.code,
+                  text: play.name
+                }))}
+                onChange={onChange}
+                error={errors.player}
+              />
+
+
+return (
+    <nav>      
+      <NavLink to="/" activeStyle={activeStyle} exact>
+        Home
+      </NavLink>
+      {" | "}
+      <NavLink to="/courses" activeStyle={activeStyle}>
+        Courses
+      </NavLink>
+      {" | "}
+      <NavLink to="/about" activeStyle={activeStyle}>
+        About
+      </NavLink>
+    </nav>
+  );
