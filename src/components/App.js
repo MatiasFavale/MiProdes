@@ -7,7 +7,7 @@ import Header from "./common/Header";
 import HeaderLog from "./common/HeaderLog";
 import HeaderAdmin from "./common/HeaderAdmin";
 import PageNotFound from "./PageNotFound";
-import CoursesPage from "./courses/CoursesPage";
+//import CoursesPage from "./courses/CoursesPage";
 import ManageCoursePage from "./courses/ManageCoursePage";
 import ResultadosPage from "./resultados/ResultadosPage";
 import RegisterPage from "./login/RegisterPage";
@@ -49,9 +49,6 @@ const App = ({ userLogin , actions}) => {
     )}         
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route path="/courses" component={CoursesPage} />
-      <Route path="/course/:slug" component={ManageCoursePage} />
-      <Route path="/course" component={ManageCoursePage} />
       <Route path="/fixture" component={FixturePage} />
       <Route exact path="/player" component={ManagePlayerModal} />
       <Route exact path="/champion" component={ManageChampionModal} />

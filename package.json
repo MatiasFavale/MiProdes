@@ -5,7 +5,7 @@
   "description": "App Node Prode Qatar 22",
   "homepage": "https://matiasfavale.github.io/MiProdes",
   "scripts": {
-    "start": "run-p start:prd",
+    "start": "react-scrips start",
     "start:dev": "webpack serve --config webpack.config.dev.js --port 3000",
     "start:prd": "webpack serve --config webpack.config.prod.js --port 3001",
     "prestart:api": "node tools/createMockDb.js",
@@ -18,7 +18,7 @@
     "postbuild": "run-p start:api serve:build",
     "serve:build": "http-server ./build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d src"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",

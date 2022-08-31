@@ -19,11 +19,6 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
-              <NavLink className="nav-link px-2 text-white" to="/courses" activeStyle={activeStyle}>
-                Courses
-              </NavLink>
-              </li>
             </ul>
 
 
