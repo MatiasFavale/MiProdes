@@ -1,5 +1,4 @@
 #app {
-  /*max-width: 1050px;*/
   margin: 0 auto;
 }
 
@@ -48,6 +47,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 .classA{
   border-bottom-color: orange;
