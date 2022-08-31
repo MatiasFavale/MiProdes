@@ -3,7 +3,7 @@
   
   "name": "appprode",
   "description": "App Node Prode Qatar 22",
-  "homepage": "https://MatiasFavale.github.io/MiProdes",
+  "homepage": "https://matiasfavale.github.io/MiProdes",
   "scripts": {
     "start": "run-p start:prd",
     "start:dev": "webpack serve --config webpack.config.dev.js --port 3000",
