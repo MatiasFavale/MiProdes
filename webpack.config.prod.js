@@ -75,5 +75,9 @@ module.exports = {
       },
       { test: /\.png$/, use: 'url-loader?limit=100000' }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './src'
   }
 };
