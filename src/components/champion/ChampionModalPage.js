@@ -24,7 +24,8 @@ const ChampionModalPage = ({
       <Button onClick={onShow} variant="secondary">Elegir Campeon</Button>
       <br></br>
       <div className="text-center">
-        <img className="rounded imgFlagSelect" src={"src/img/" + champion.teamSelect + ".svg"} />
+      
+        <img className={"rounded imgFlagSelect" + " imgFlag" + champion.teamSelect} ></img>
         <br></br>          
       </div>
       <br></br>
@@ -61,7 +62,8 @@ const ChampionModalPage = ({
               
               <br></br>
               <div className="text-center">
-                <img className="rounded imgFlagSelect" src={"src/img/" + champion.teamSelect + ".svg"} />
+              
+                <img className={"rounded imgFlagSelect" + " imgFlag" + champion.teamSelect} ></img>
               </div>
             </Form.Group>
           </Form>

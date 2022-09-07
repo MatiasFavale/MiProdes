@@ -38,6 +38,108 @@ nav {
   box-shadow: 1px 1px 2px #d316162e, -1px 0 2px #ef24242e;
 }
 
+.imgFlagALE{
+  content:url("./img/ALE.svg");
+}
+.imgFlagARA{
+  content:url("./img/ARA.svg");
+}
+.imgFlagARG{
+  content:url("./img/ARG.svg");
+}
+.imgFlagAUS{
+  content:url("./img/AUS.svg");
+}
+.imgFlagBEL{
+  content:url("./img/BEL.svg");
+}
+.imgFlagBRA{
+  content:url("./img/BRA.svg");
+}
+.imgFlagCAM{
+  content:url("./img/CAM.svg");
+}
+.imgFlagCAN{
+  content:url("./img/CAN.svg");
+}
+.imgFlagCOR{
+  content:url("./img/COR.svg");
+}
+.imgFlagCOS{
+  content:url("./img/COS.svg");
+}
+.imgFlagCRO{
+  content:url("./img/CRO.svg");
+}
+.imgFlagPAI{
+  content:url("./img/PAI.svg");
+}
+.imgFlagDIN{
+  content:url("./img/DIN.svg");
+}
+.imgFlagECU{
+  content:url("./img/ECU.svg");
+}
+.imgFlagESP{
+  content:url("./img/ESP.svg");
+}
+.imgFlagFRA{
+  content:url("./img/FRA.svg");
+}
+.imgFlagGAL{
+  content:url("./img/GAL.svg");
+}
+.imgFlagGHA{
+  content:url("./img/GHA.svg");
+}
+.imgFlagING{
+  content:url("./img/ING.svg");
+}
+.imgFlagIRA{
+  content:url("./img/IRA.svg");
+}
+.imgFlagJAP{
+  content:url("./img/JAP.svg");
+}
+.imgFlagMAR{
+  content:url("./img/MAR.svg");
+}
+.imgFlagMEX{
+  content:url("./img/MEX.svg");
+}
+.imgFlagPAI{
+  content:url("./img/PAI.svg");
+}
+.imgFlagPOL{
+  content:url("./img/POL.svg");
+}
+.imgFlagPOR{
+  content:url("./img/POR.svg");
+}
+.imgFlagQAT{
+  content:url("./img/QAT.svg");
+}
+.imgFlagSEN{
+  content:url("./img/SEN.svg");
+}
+.imgFlagSER{
+  content:url("./img/SER.svg");
+}
+.imgFlagSUI{
+  content:url("./img/SUI.svg");
+}
+.imgFlagTUN{
+  content:url("./img/TUN.svg");
+}
+.imgFlagURU{
+  content:url("./img/URU.svg");
+}
+.imgFlagUSA{
+  content:url("./img/USA.svg");
+}
+
+
+
 .withTableTH{
   width: 450px;
 }
@@ -45,8 +147,10 @@ nav {
 .fondoClass{
   background-image: url("./img/fondoQatar.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
+
 
 
 .classA{
@@ -102,6 +206,55 @@ nav {
  */
 }
 
+.imagePlayerBALE{
+  content:url("./img/players/BALEBACK.svg");
+}
+.imagePlayerDEPAY{
+  content:url("./img/players/DEPAYBACK.svg");
+}
+.imagePlayerERIKSEN{
+  content:url("./img/players/ERIKSENBACK.svg");
+}
+.imagePlayerKANE{
+  content:url("./img/players/KANEBACK.svg");
+}
+.imagePlayerLEWANDOWSKI{
+  content:url("./img/players/LEWANDOWSKIBACK.svg");
+}
+.imagePlayerLUKAKU{
+  content:url("./img/players/LUKAKUBACK.svg");
+}
+.imagePlayerMANE{
+  content:url("./img/players/MANEBACK.svg");
+}
+.imagePlayerMBAPPE{
+  content:url("./img/players/MBAPPEBACK.svg");
+}
+.imagePlayerMESSI{
+  content:url("./img/players/MESSIBACK.svg");
+}
+.imagePlayerMODRIC{
+  content:url("./img/players/MODRICBACK.svg");
+}
+.imagePlayerMORATA{
+  content:url("./img/players/MORATABACK.svg");
+}
+.imagePlayerMULLER{
+  content:url("./img/players/MULLERBACK.svg");
+}
+.imagePlayerNEYMAR{
+  content:url("./img/players/NEYMARBACK.svg");
+}
+.imagePlayerRONALDO{
+  content:url("./img/players/RONALDOBACK.svg");
+}
+.imagePlayerSUAREZ{
+  content:url("./img/players/SUAREZBACK.svg");
+}
+.imagePlayerVLAHOVIC{
+  content:url("./img/players/VLAHOVICBACK.svg");
+}
+
 .xGrupo{
   width: 380px;
   float: left;
@@ -126,13 +279,13 @@ nav {
 }
 
 .tableCuaHeight {
-  max-height: 290px;
-  height: 290px;
+  max-height: 220px;
+  height: 220px;
 }
 
 .tableFinalesHeight {
-  max-height: 190px;
-  height: 190px;
+  max-height: 120px;
+  height: 120px;
 }
 
 .nombreSpam{

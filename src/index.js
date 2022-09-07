@@ -11,7 +11,7 @@ const store = configureStore();
 
 render(
   <ReduxProvider  store={store}>
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <App />
     </Router>
   </ReduxProvider>,

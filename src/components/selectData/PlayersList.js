@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import TextInput from "../common/TextInput";
+import TextInputNumber from "../common/TextInputNumber";
 import PropTypes from "prop-types";
 import SelectInput from "../common/SelectInput";
 import { BiSave } from "react-icons/bi";
@@ -39,11 +40,9 @@ const PlayersList = ({
             var sCode = jugador.code;
             return (
               <tr key={jugador.code}>    
-                <td>{jugador.name}</td>         
-                
+                <td>{jugador.name}</td>   
                 <td>
-                  
-                  <TextInput
+                  <TextInputNumber
                     name="goals"
                     label=""
                     value={jugador.goals}
@@ -76,7 +75,8 @@ const PlayersList = ({
         />
         <br></br>
         <div className="text-center">
-          <img className="rounded imgFlagSelect" src={"src/img/" + campeon.code + ".svg"} />
+        
+          <img className={"rounded imgFlagSelect" + " imgFlag" + campeon.code} ></img> 
           <br></br>          
         </div>
         <br></br>
