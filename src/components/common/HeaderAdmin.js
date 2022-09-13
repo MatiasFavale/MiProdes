@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const HeaderAdmin = () => {
+const HeaderAdmin = ({nameUser}) => {
   const activeStyle = { color: "red" };
   return (
     
@@ -61,7 +61,7 @@ const HeaderAdmin = () => {
             <div className="text-end">
               
               <NavLink className="btn btn-warning" to="/register" activeStyle={activeStyle}>
-                Sign Out
+                {nameUser} / Salir
               </NavLink>
             </div>
           </div>
