@@ -50,7 +50,7 @@ function ManagePlayerModal({players, points,point={}, loadPlayers,loadPoints, sa
         .catch(error =>{
           alert("loading point failed " + error);
         });
-        toast.success("Su Jugador se cargo correctamente!!");
+        toast.success("Su Jugador se cargo correctamente!");
     }).catch(error => {
         setSaving(false);
         setErrors({onSave: error.message});
