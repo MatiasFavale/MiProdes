@@ -6,6 +6,8 @@ npm start
 
 //"start": "run-p start:dev start:api",
 
+miprode86@gmail.com
+
 <SelectInput
                 name="playerSelect"
                 label="Player"

@@ -28,6 +28,7 @@ const App = ({ userLogin , actions}) => {
   
   var sLocal = localStorage.getItem('userLogin');
   if(sLocal !== null){
+    console.log(userLogin);
     if(userLogin.message !== "Success"){
       if(new Date() <= new Date(JSON.parse(sLocal).expires)){
         actions.loadLoginLocalSt(JSON.parse(sLocal));
@@ -40,9 +41,9 @@ const App = ({ userLogin , actions}) => {
     <div className="container-fluid">   
     {userLogin.message === "Success" ? (
       userLogin.type === "admin" ? (
-        <HeaderAdmin />        
+        <HeaderAdmin userLogin={userLogin}/>        
       ) : (
-        <HeaderLog />
+        <HeaderLog userLogin={userLogin}/>
       )
     ) : (
       <Header />

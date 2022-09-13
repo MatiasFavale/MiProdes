@@ -6,15 +6,17 @@ const LoginForm = ({
   user,
   onLogin,
   onChange,
-  login = false,
+  saving = false,
+  onCloseAlert,
   errors = {}
 }) => {
   return (
     <form onSubmit={onLogin}>
       <h2>Login Usuario</h2>
       {errors.onLogin && (
-        <div className="alert alert-danger" role="alert">
+        <div className="alert alert-danger alert-dismissible fade show" role="alert">
           {errors.onLogin}
+          <button onClick={onCloseAlert} type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       )}
       <TextInput
@@ -31,9 +33,9 @@ const LoginForm = ({
         onChange={onChange}
         error={errors.password}
       />
-
-      <button type="submit" disabled={login} className="btn btn-primary">
-        {login ? "Saving..." : "Save"}
+      <br></br>
+      <button type="submit" disabled={saving} className="btn btn-primary">
+        {saving ? "Ingresando..." : "Ingresar"}
       </button>
     </form>
   );
@@ -44,7 +46,7 @@ LoginForm.propTypes = {
   errors: PropTypes.object,
   onLogin: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  login: PropTypes.bool
+  saving: PropTypes.bool
 };
 
 export default LoginForm;
