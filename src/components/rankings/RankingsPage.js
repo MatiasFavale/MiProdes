@@ -12,19 +12,38 @@ import {toast} from "react-toastify";
 class RankingsPage extends React.Component {
   state = {
     redirectToAddCoursePage:false,
-    errors:{}
+    errors:{},
+    initialState:0,
+    endState:10
   };
   componentDidMount(){
-    const {rankings, actions,  userLogin} = this.props;
-        
+    const {rankings,  actions,  userLogin} = this.props;
+
       actions.loadRankings(userLogin)
       .catch(error =>{
         alert("loading ranks failed " + error);
       });  
   }
-
+  onNext = () => {
+    var  endState  = this.state.endState;
+    endState = endState + 10;
+    var  initialState  = this.state.initialState;
+    initialState = initialState + 10;
+    this.setState({ endState:endState }) 
+    this.setState({ initialState:initialState }) 
+  }
+  onBack = () => {
+    var  endState  = this.state.endState;
+    var  initialState  = this.state.initialState;
+    endState = endState - 10;    
+    initialState = initialState - 10;
+    this.setState({ endState:endState }) 
+    this.setState({ initialState:initialState }) 
+  }
   render() {
+    
     return (
+      
       <>
         <h2>Rankings Usuarios</h2>  
         {this.props.loading ? (
@@ -33,8 +52,11 @@ class RankingsPage extends React.Component {
           <>
             {this.props.rankings !== undefined || this.props.rankings.length > 0 ? (
               <>
-                <RankingsList  rankings={this.props.rankings}
-                  errors={this.state.errors}/>
+                <RankingsList  rankings={this.props.rankings.slice(this.state.initialState,this.state.endState)}
+                  errors={this.state.errors} onNext={this.onNext.bind(this)} 
+                  onBack={this.onBack.bind(this)} 
+                  visibleNext={this.props.rankings.length > this.state.endState ? true : false}
+                  visibleBack={this.state.initialState === 0 ? false : true}/>
               </>
               
             ) : (          
@@ -59,7 +81,6 @@ RankingsPage.propTypes = {
 
 //Seccion Redux
 function mapStateToProps(state){
-  debugger;
   return { 
     rankings: state.rankings,
     userLogin:state.userLogin,
