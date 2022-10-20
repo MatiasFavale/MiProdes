@@ -73,7 +73,7 @@ const TableFixture = ({matches = [],  errors = {}, onChange, onSaveClick, active
                             {
                             match.habilitado === true 
                             ? <Button onClick={() => onSaveClick(match)} variant="primary"><BiSave /></Button>
-                            : <></>
+                            : <span><strong className="labelGreen">{match.ResultProde}</strong></span> 
                             }              
                             </td>
                             

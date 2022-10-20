@@ -15,18 +15,23 @@ function ManagePlayerModal({players, points,point={}, loadPlayers,loadPoints, sa
   const [selectedImage, setSelectedImage] = useState({});
 
   useEffect(() => {
-    loadPlayers(userLogin)
-    .catch(error =>{
-      alert("loading players failed " + error);
-    });
-     
-    
-    if(points.length === 0){
-      loadPoints(userLogin)
+    debugger;
+    if(userLogin.message === "Success"){
+      loadPlayers(userLogin)
       .catch(error =>{
-        alert("loading point failed " + error);
-      });
+        alert("loading players failed " + error);
+      });     
+      
+      if(points.length === 0){
+        loadPoints(userLogin)
+        .catch(error =>{
+          alert("loading point failed " + error);
+        });
+      }
+    }else{
+      history.push("/");
     }
+    
   }, [props.player]);
 
   function handleChange(event){

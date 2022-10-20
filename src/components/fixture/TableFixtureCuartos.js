@@ -73,7 +73,7 @@ const TableFixtureCuartos = ({matches = [],  errors = {}, onChange, onSaveClick,
                       {
                         match.habilitado === true 
                         ? <Button onClick={() => onSaveClick(match)} variant="primary"><BiSave /></Button>
-                        : <></>
+                        : <span><strong className="labelGreen">{match.ResultProde}</strong></span> 
                       }              
                       </td>                    
                     </tr>

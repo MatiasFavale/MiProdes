@@ -18,31 +18,35 @@ class FixturePage extends React.Component {
     errors:{}
   };
   componentDidMount(){
-    const {matches, teams, predictions, actions, userLogin, activeItem, activegroup} = this.props;
-    //if(matches.length === 0){
-      actions.loadMatches(userLogin, "GRU")
-      .catch(error =>{
-        alert("loading matches failed " + error);
-      });
-    //}
+    const {matches, teams, predictions, actions, userLogin, activeItem, activegroup, history} = this.props;
 
-    actions.changeGroup(activeItem);
-    
-    if(teams.length === 0){
-      actions.loadTeams(userLogin)
-      .catch(error =>{
-        alert("loading teams failed " + error);
-      });
-    }   
-    
-    //if(predictions.length === 0){
-      actions.loadPrediction(userLogin)
-      .catch(error =>{
-        alert("loading prediction failed " + error);
-      });
-    //}   
+    if(userLogin.message === "Success"){
+      //if(matches.length === 0){
+        actions.loadMatches(userLogin, "GRU")
+        .catch(error =>{
+          alert("loading matches failed " + error);
+        });
+      //}
+  
+      actions.changeGroup(activeItem);
+      
+      if(teams.length === 0){
+        actions.loadTeams(userLogin)
+        .catch(error =>{
+          alert("loading teams failed " + error);
+        });
+      }   
+      
+      //if(predictions.length === 0){
+        actions.loadPrediction(userLogin)
+        .catch(error =>{
+          alert("loading prediction failed " + error);
+        });
+      //} 
+    }else{
+      history.push("/");
+    }      
   }
-
 
   handleItemChanged = (match, event) => {
     debugger;
@@ -134,7 +138,8 @@ FixturePage.propTypes = {
   predictions: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,  
   loading: PropTypes.bool.isRequired,
-  activegroup: PropTypes.object.isRequired
+  activegroup: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 //Seccion Redux
@@ -182,12 +187,27 @@ function mapStateToProps(state){
         }
         var sGolOne="";
         var sGolTwo = "";
+        var sResultProde = "";
         if(match.winner === ""){
           sGolOne = "";
           sGolTwo = "";
         }else{
           sGolOne = match.goalsTeamOne;
-          sGolTwo = match.goalsTeamTwo;          
+          sGolTwo = match.goalsTeamTwo;  
+          if(sGolOne !== "" && sGolTwo !== ""){
+            if(sPrediccionTeamOne === sPrediccionTeamTwo && sGolOne === sGolTwo){
+              sResultProde = "+3";
+            }
+            if(sPrediccionTeamOne > sPrediccionTeamTwo && sGolOne > sGolTwo){
+              sResultProde = "+3";
+            }
+            if(sPrediccionTeamOne > sPrediccionTeamTwo && sGolOne > sGolTwo){
+              sResultProde = "+3";
+            }
+            if(sPrediccionTeamOne.toString() === sGolOne.toString() && sPrediccionTeamTwo.toString() === sGolTwo.toString()){
+              sResultProde = "+5";
+            }
+          }        
         }
       return {        
         ...match,
@@ -200,7 +220,8 @@ function mapStateToProps(state){
         nameInpL: "prediccionL_" + match.code ,
         nameInpV: "prediccionV_" + match.code ,
         Group: sFase,
-        Fecha: match.date + " " + match.time
+        Fecha: match.date + " " + match.time,
+        ResultProde: sResultProde
       };
     }),
     teams: state.teams,
