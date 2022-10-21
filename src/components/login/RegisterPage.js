@@ -23,10 +23,24 @@ function RegisterPage({userLogin, saveRegister, saveRegisterCode, history, ...pr
 
   function handleChange(event){
     const {name, value} = event.target;
-    setUser(prevRegister => ({
+    var boolGo = true;
+    if(name === "name"){
+      if(value.length > 15){
+        boolGo = false;
+      }
+    }
+    if(boolGo){
+      setUser(prevRegister => ({
         ...prevRegister,
         [name]: name === "authorId" ? parseInt(value,10) : value
     })) 
+    }else{
+      var errors = {};
+      errors.name = "El nombre no debe superar los 15 caracteres.";
+      setErrors(errors);
+      return Object.keys(errors).length === 0;
+    }
+    
   }
   function handleChangeCode(event){
     
