@@ -37,7 +37,7 @@ export function saveRegister(register){
         })
         .catch(error => {
             dispatch(apiCallError(error));
-            throw error;
+            throw error; 
         })
     }
 }
