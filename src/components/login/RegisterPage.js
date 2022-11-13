@@ -124,13 +124,20 @@ function RegisterPage({userLogin, saveRegister, saveRegisterCode, history, ...pr
     
   
   return (
-    <RegisterForm 
-      user={user} 
-      errors={errors} 
-      onChange={handleChange}
-      onChangeCodeAuth={handleChangeCode}
-      onSave={handleSave}
-      saving={saving}/>
+    <>
+      {saving ? (
+        <Spinner/>
+      ) : (
+        <RegisterForm 
+        user={user} 
+        errors={errors} 
+        onChange={handleChange}
+        onChangeCodeAuth={handleChangeCode}
+        onSave={handleSave}
+        saving={saving}/>
+      )}
+    </>
+    
   )
   
 }

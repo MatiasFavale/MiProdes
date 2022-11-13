@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import TextInput from "../common/TextInput";
 import PasswordInput from "../common/PasswordInput";
+import Spinner from "../common/Spinner";
 
 const LoginForm = ({
   user,
@@ -36,7 +37,7 @@ const LoginForm = ({
       />
       <br></br>
       <button type="submit" disabled={saving} className="btn btn-primary">
-        {saving ? "Ingresando..." : "Ingresar"}
+        {saving ? <span>Ingresando</span> : <span>Ingresar</span>}
       </button>
     </form>
   );
