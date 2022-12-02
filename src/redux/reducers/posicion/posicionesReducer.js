@@ -4,7 +4,7 @@ import initialState  from "../initialState";
 export default function posicionesReducer(state = initialState.posicionesteams, action){
     switch (action.type){
         case types.LOAD_POSICIONES_TEAMS_SUCCESS:
-            
+            debugger;
             var objectGroups = {
                 "GrupoA": action.posicionesteams.filter(nfilter=>nfilter.group === "A")
                 .sort((a, b) => +b.difference-a.difference).sort((a, b) => a.points > b.points ? -1 : 1),
@@ -25,6 +25,26 @@ export default function posicionesReducer(state = initialState.posicionesteams, 
                 .sort((a, b) => +b.difference-a.difference).sort((a, b) => a.points > b.points ? -1 : 1)
             }
             debugger;
+
+            var arr = []
+            for(let i in objectGroups.GrupoH){
+                var o = objectGroups.GrupoH.filter(nfilter=>nfilter.difference === objectGroups.GrupoH[i].difference)
+                if(o.length>1){
+                    var a = o.sort((a, b) => +b.goalsf-a.goalsf);
+                    for(var r in a){
+                        if(arr.filter(nfilter=>nfilter.code === a[r].code).length > 0){
+                            console.log("");
+                        }else{
+                            arr.push(a[r])
+                        }
+                    }
+                }else{
+                    console.log(o)
+                    arr.push(o[0])
+                }    
+            }
+            objectGroups.GrupoH = arr;
+
             action.posicionesteams = objectGroups;
             return action.posicionesteams;
         default:
